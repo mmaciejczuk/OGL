@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace OGL.Models
 {
@@ -27,6 +28,19 @@ namespace OGL.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            // Wyłącza konwencję CascadeDelete
+            // CascadeDelete zostanie włączone za pomocą Fluent API
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            // używa się Fluent API, aby ustalić powiązanie pomiędzy tabelami 
+            // i włączyć CascadeDelete dla tego powiązania
+
+            modelBuilder.Entity<Ogloszenie>().
+                HasRequired(x => x.Uzytkownik).
+                WithMany(x => x.Ogloszenia).
+                HasForeignKey(x => x.UzytkownikId).
+                WillCascadeOnDelete(true);
         }
     }
 }

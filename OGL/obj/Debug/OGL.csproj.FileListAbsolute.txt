@@ -93,3 +93,4 @@ F:\Git_Repo\OGL\OGL\OGL\bin\Microsoft.Owin.Security.Twitter.xml
 F:\Git_Repo\OGL\OGL\OGL\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\Git_Repo\OGL\OGL\OGL\obj\Debug\OGL.dll
 F:\Git_Repo\OGL\OGL\OGL\obj\Debug\OGL.pdb
+F:\Git_Repo\OGL\OGL\OGL\obj\Debug\OGL.csprojResolveAssemblyReference.cache
