@@ -16,7 +16,7 @@ namespace OGL.Models
         [Key]
         [Display(Name = "Id kategorii:")]
         public int Id { get; set; }
-        [Display(Name = "Nazwa kategorii:"]
+        [Display(Name = "Nazwa kategorii:")]
         [Required]
         public string Nazwa { get; set; }
         [Required]
