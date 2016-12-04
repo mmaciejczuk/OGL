@@ -7,16 +7,26 @@ using Microsoft.AspNet.Identity.EntityFramework;
 namespace OGL.Models
 {
 
-    public class ApplicationDbContext : IdentityDbContext<Uzytkownik>
+    public class OglContext : IdentityDbContext
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+        public OglContext()
+            : base("DefaultConnection")
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static OglContext Create()
         {
-            return new ApplicationDbContext();
+            return new OglContext();
+        }
+
+        public DbSet<Kategoria> Kategorie { get; set; }
+        public DbSet<Ogloszenie> Ogloszenia { get; set; }
+        public DbSet<Uzytkownik> Uzytkownik { get; set; }
+        public DbSet<Ogloszenie_Kategoria> Ogloszenie_Kategoria { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
