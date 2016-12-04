@@ -25,6 +25,7 @@ namespace OGL.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime DataDodania { get; set; }
         public int UzytkownikId { get; set; }
+
         public virtual ICollection<Ogloszenie_Kategoria> Ogloszenie_Kategoria { get; set; }
 
         public virtual Uzytkownik Uzytkownik { get; set; }
