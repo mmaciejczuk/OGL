@@ -206,13 +206,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Views\AccountViewModels.cs" />
-    <Compile Include="Models\OglContext.cs" />
-    <Compile Include="Models\Kategoria.cs" />
-    <Compile Include="Models\Views\ManageViewModels.cs" />
-    <Compile Include="Models\Ogloszenie.cs" />
-    <Compile Include="Models\Ogloszenie_Kategoria.cs" />
-    <Compile Include="Models\Uzytkownik.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -293,9 +287,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Repozytorium\Repozytorium.csproj">
+      <Project>{44f43d95-0e9b-4b5e-b375-1e98a66c2b18}</Project>
+      <Name>Repozytorium</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
